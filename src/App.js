@@ -38,26 +38,7 @@ function App() {
     })
   }
 
-  const countryName  = React.useRef("")
-
-  React.useEffect(()=> {
-    // console.log(countryName)
-    // if(countryName.current !== "" && countryName.current !== null){
-    //   let name = countryName.current.value.toLowerCase()
-    //   const info = countries.filter(current => {
-    //     let currentName = current.name.common.toLowerCase()
-    //     // console.log(currentName)
-    //     return currentName.includes(name) && current
-    //   })
-    //   console.log("ok", info)
-      
-    //   if(info.length > 0 && info.length !== 250){
-    //     setCountry(info)
-    //   }
-    // }
-    search()
-  }, [countryName])
-
+  let countryName  = React.useRef("")
 
   function search(){
     console.log(countryName)
@@ -144,6 +125,7 @@ function App() {
                   }else{
                     // return (<div className='border-country'>{`${current.borders[key1]},`}</div>)
                   }
+                  return undefined
                 }) 
               :
               <div className='border-country'>None</div>

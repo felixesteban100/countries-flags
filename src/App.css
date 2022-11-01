@@ -15,17 +15,13 @@
   margin: 0;
 }
 
-body{
-  margin: 0;
-}
-
-
 .App-light{
   --text: hsl(200, 15%, 8%);
   --background:  hsl(0, 12%, 92%);
   --input: hsl(0, 0%, 52%);
   --elements: hsl(0, 0%, 100%);
   background-color: var(--background);
+  
 }
 
 .App-dark{
@@ -35,7 +31,6 @@ body{
   --elements: hsl(209, 23%, 22%);
   background-color: var(--background);
 }
-
 
 .page{
   background-color: var(--background);
@@ -245,7 +240,7 @@ body{
   }
 
   .title{
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 0;
     margin: 0;
   }
@@ -263,31 +258,33 @@ body{
   }
   
   .cards{
-    margin: 0 5rem;
+    margin: 0;
     background-color: var(--background);
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    /* grid-template-columns: repeat(1, 1fr); */
+    grid-template-columns: 20rem;
     gap: 3rem;
-    padding: 1rem;
+    /* padding: 1rem; */
+    justify-content: center;
   }
 
   .card{
     background-color: var(--elements);
-    height: 38rem;
-    width: 95%;
-    margin: 0 auto;
+    height: 23rem;
+    width: 70%;
+    /* margin: 0 3.5rem; */
     cursor: pointer;
     border-radius: 0.5rem;
   }
 
   .card-info{
     padding: 1rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 2rem;
   }
   
   .card-img{
-    height: 20rem;
+    height: 10rem;
     width: 100%;
     border-radius: 0.5rem 0.5rem 0 0;
   }
@@ -295,18 +292,20 @@ body{
 
   .search-component{
     padding-top:6rem;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .search-bar{
     padding: 1rem;
     font-size: larger;
-    width: 25rem;
+    width: 16rem;
     background-color: var(--elements);
     color: var(--text);
     border: none;
     margin-bottom: 1rem;
-    margin-left: 5rem;
+    /* margin-left: 5rem; */
     border-radius: 0.5rem 0 0 0.5rem;
   }
 
@@ -327,7 +326,7 @@ body{
   
   .filter-bar{
     margin-bottom: 1rem;
-    margin-left: 5rem;
+    /* margin-left: 5rem; */
     border-radius: 0.5rem;
   }
 
