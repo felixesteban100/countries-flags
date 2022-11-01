@@ -262,7 +262,7 @@
   }
   
   .big-card-component{
-    padding-top: 5rem;
+    padding-top: 2rem;
     padding-bottom: 2rem;
   }
   
@@ -273,7 +273,7 @@
     padding: 1rem;
     display: flex;
     align-items: center;
-    margin: 2rem 4rem;
+    margin: 0rem 4rem;
   }
   
   .big-card{
@@ -287,9 +287,9 @@
   
   .big-card-img{
     height: 95%;
-    max-width: 1000px;
     width: 75%;
     margin: 0 auto;
+    max-width: 500px;
   }
   
   .big-card-info{
