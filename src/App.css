@@ -124,6 +124,8 @@
   background-color: var(--elements);
   height: 25rem;
   width: 95%;
+  max-width: 1000px;
+  min-width: 200px;
   /* border: 1px solid var(--input); */
   cursor: pointer;
   border-radius: 0.5rem;
@@ -220,7 +222,7 @@
 }
 
 
-@media (max-width: 1200px){
+@media (max-width: 800px){
   .page{
     background-color: var(--background);
     color: var(--text);
@@ -259,20 +261,22 @@
   
   .cards{
     margin: 0;
+    width: 100%;
+    padding: 0;
     background-color: var(--background);
     display: grid;
     /* grid-template-columns: repeat(1, 1fr); */
-    grid-template-columns: 20rem;
-    gap: 3rem;
+    grid-template-columns: 100%;
+    /* gap: 3rem; */
     /* padding: 1rem; */
-    justify-content: center;
   }
 
   .card{
     background-color: var(--elements);
     height: 23rem;
-    width: 70%;
-    /* margin: 0 3.5rem; */
+    width: 65%;
+    max-width: 300px;
+    margin: 0 auto;
     cursor: pointer;
     border-radius: 0.5rem;
   }
@@ -410,4 +414,27 @@
     box-shadow: 0 1px 1px gray;
   }
   
+}
+
+@media (max-width: 1200px) and (min-width: 800px){
+  .cards{
+    /* margin: 0 auto; */
+    width: 100%;
+    padding: 0;
+    background-color: var(--background);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: 100%; */
+    gap: 3rem;
+    /* padding: 1rem; */
+  }
+  .card{
+    background-color: var(--elements);
+    height: 23rem;
+    width: 75%;
+    max-width: 300px;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 0.5rem;
+  }
 }
