@@ -1,6 +1,6 @@
 import React from 'react';
 // import { ComposableMap, Geographies, Geography, Annotation, /* ZoomableGroup */} from "react-simple-maps";
-import Map, {Marker} from 'react-map-gl';
+import Map/* , {Marker}  */from 'react-map-gl';
 
 
 function CardInfo({getBack, backImg, backImgstyle, country}) {
@@ -9,7 +9,7 @@ function CardInfo({getBack, backImg, backImgstyle, country}) {
 
     // const geoUrl = "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json"
 
-    const token = "pk.eyJ1IjoiZmVsaXhlc3RlYmFuMTAwIiwiYSI6ImNsMWZqOWJjajAxYmczam50NmE0cHg2ZGwifQ.hBcYgEEg_6YUZtCXLRBShA"
+    // const token = "pk.eyJ1IjoiZmVsaXhlc3RlYmFuMTAwIiwiYSI6ImNsMWZqOWJjajAxYmczam50NmE0cHg2ZGwifQ.hBcYgEEg_6YUZtCXLRBShA"
 
     return (
         <div>
@@ -47,7 +47,8 @@ function CardInfo({getBack, backImg, backImgstyle, country}) {
 
                                 <div className='cardInfo-map'>
                                 <Map
-                                    mapboxAccessToken={token}
+                                    mapboxAccessToken="pk.eyJ1IjoiZmVsaXhlc3RlYmFuMTAwIiwiYSI6ImNsMWZqOWJjajAxYmczam50NmE0cHg2ZGwifQ.hBcYgEEg_6YUZtCXLRBShA"
+                                    // mapboxAccessToken="https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoiZmVsaXhlc3RlYmFuMTAwIiwiYSI6ImNsMWZqOWJjajAxYmczam50NmE0cHg2ZGwifQ.hBcYgEEg_6YUZtCXLRBShA"
                                     initialViewState={{
                                         longitude: current.latlng[1],
                                         latitude: current.latlng[0],
