@@ -18,7 +18,7 @@ function SearchBar(props) {
           {/* <div><img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="" className='search-logo'/></div> */}
 
           <select name="" id="" className='filter-bar' onChange={(event) => props.getRegion(event)} placeholder="Filter by region">
-            <option value="">Filter by region</option>
+            <option value="All">Filter by region</option>
             <option value="africa">Africa</option>
             <option value="americas">America</option>
             <option value="asia">Asia</option>
