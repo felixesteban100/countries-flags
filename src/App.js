@@ -16,7 +16,7 @@ function App() {
     return await axios.get('https://restcountries.com/v3.1/all')
     .then(data => {
       getThemeSaved()
-      setCountries(data.data)
+      setCountries(shuffle(data.data))
       return organizeData(data.data)
     })
   })
@@ -35,7 +35,7 @@ function App() {
   }
 
   function organizeData(data){
-    return data.map((current) => {
+    let newArr = data.map((current) => {
 
       current.population = current.population.toLocaleString()
 
@@ -57,6 +57,26 @@ function App() {
       current.timezones = Object.values(current.timezones).reduce((accumulator, current) => `${accumulator}, ${current}`)
       return current
     })
+
+    return shuffle(newArr)
+  }
+
+  function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
   }
 
   function getRegion(event){
