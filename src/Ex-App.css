@@ -81,13 +81,23 @@ html {
 /* NAVBAR */
 
 
+/* FULL */
+
+.full-container{
+  margin: 0 auto;
+  width: 80vw;
+}
+
 
 /* SEARCH */
 .search-component{
+  /* margin: 0 auto; */
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  margin: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .search-bar{
@@ -130,19 +140,22 @@ html {
 
 /* CARD */
 .cards-container{
-  margin: 0 auto;
-  width: 90vw;
+  /* margin: 0 auto; */
+  width: 80vw;
   background-color: var(--background);
   display: grid;
   grid-template-columns: repeat(4, 20%);
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
+  /* justify-content: center; */
+  /* align-items: center; */
+  gap: 4rem;
+  padding-bottom: 10rem;
 }
 
 .card{
   background-color: var(--elements);
-  height: 100%;
+  /* height: fit-content; */
+  min-height: 100%;
+  /* height: fit-content; */
   width: 100%;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -158,8 +171,7 @@ html {
 .card-info{
   padding: 1rem;
   height: 10rem;
-  height: fit-content;
-
+  /* height: fit-content; */
 }
 
 .card-country-name{
