@@ -3,10 +3,9 @@ import { useQuery } from 'react-query'
 import axios from 'axios';
 import Navbar from './components/Navbar';
 import SearchBar from './components/SearchBar';
-import Card from './components/Card';
+import PaginatedItems from './components/Card';
 import CardInfo from './components/CardInfo';
 import Loading from './components/Loading';
-
 
 function App() {
   const [countries, setCountries] = useState([])
@@ -14,6 +13,8 @@ function App() {
   const [theme, setTheme] = useState('dark')
 
   const countryName  = useRef("")
+
+  const [itemOffset, setItemOffset] = useState(0);
 
   const {isLoading, /* error, */ data: allCountries} = useQuery("getting all countries", async () => {
     return await axios.get('https://restcountries.com/v3.1/all')
@@ -90,10 +91,18 @@ function App() {
         setCountries(shuffle(allCountries))
       break;
 
-      default:
+      case 'africa':
+      case 'americas':
+      case 'asia':
+      case 'europe':
+      case 'oceania':
         fetch(`https://restcountries.com/v3.1/region/${event.target.value}`)
         .then(res => res.json())
-        .then(data => setCountries(shuffle(allCountries)))
+        .then(data => setCountries(shuffle(data)))
+      break;
+
+      default:
+        console.log('Error selecting filter')
       break;
     }
   }
@@ -148,10 +157,14 @@ function App() {
                 search={search}
                 countryName={countryName}
                 theme={theme}
+                setItemOffset={setItemOffset}
               />
               {
                 !isLoading ?
-                <Card 
+                <PaginatedItems 
+                  itemOffset={itemOffset}
+                  setItemOffset={setItemOffset}
+                  itemsPerPage={6}
                   countries={countries}
                   selectCountry={selectCountry}
                   theme={theme}

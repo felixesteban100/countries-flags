@@ -1,18 +1,16 @@
 import React, { useEffect } from 'react'
 // import '../App.css'
 
-function SearchBar({theme, search, countryName, getRegion}) {
-  /* const searchLogo = theme === "light" ?
-  "https://cdn-icons-png.flaticon.com/512/54/54481.png"
-    :
-  "https://cdn-icons-png.flaticon.com/512/954/954591.png" */
-  
+function SearchBar({theme, search, countryName, getRegion, setItemOffset}) {
+
   useEffect(() => {
     document.addEventListener('keydown', (e) => {
-      if (e.key === "Enter") return search()
+      if (e.key === "Enter") {
+        setItemOffset(0)
+        search()
+      }
     })
-  }, [search])
-
+  }, [setItemOffset, search])
 
   return (
     <div>
@@ -44,7 +42,10 @@ function SearchBar({theme, search, countryName, getRegion}) {
             `} 
             name="" 
             id="" 
-            onChange={(event) => getRegion(event)} 
+            onChange={(event) => {
+              getRegion(event)
+              setItemOffset(0)
+            }} 
             placeholder="Filter by region"
           >
             <option value="All">All regions</option>
