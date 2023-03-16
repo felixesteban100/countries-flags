@@ -31,9 +31,9 @@ function SearchBar({theme, search, countryName, getRegion, setItemOffset}) {
               type="text" 
               placeholder='Enter country name...' 
             />
-            {/* <button className={`p-2 `} onClick={() => props.search()}>
-              <img className={`h-10`} src={searchLogo} alt="" />
-            </button> */}
+            <button className={`p-2 ${theme === "light" ? "text-black bg-white" : "bg-gray-900 text-white"} hover:bg-blue-500 hover:text-white `} onClick={() => search()}>
+              Search
+            </button>
           </div>
 
           <select 
