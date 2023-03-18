@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react'
 // import '../App.css'
 
-function SearchBar({theme, search, countryName, getRegion, setItemOffset}) {
+function SearchBar({theme, search, countryName, getRegion, setCurrentPage}) {
 
   useEffect(() => {
     document.addEventListener('keydown', (e) => {
       if (e.key === "Enter") {
-        setItemOffset(0)
+        setCurrentPage(0)
         search()
       }
     })
-  }, [setItemOffset, search])
+  }, [setCurrentPage, search])
 
   return (
     <div>
@@ -44,7 +44,7 @@ function SearchBar({theme, search, countryName, getRegion, setItemOffset}) {
             id="" 
             onChange={(event) => {
               getRegion(event)
-              setItemOffset(0)
+              setCurrentPage(0)
             }} 
             placeholder="Filter by region"
           >

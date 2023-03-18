@@ -43,9 +43,9 @@ function CardInfo({country, theme}) {
                                         pt-5 pb-5 rounded-lg
                                     `}
                                 >
-                                <p><span className='font-bold'>Native Name:</span> {current.name.common}</p>
-                                <p><span className='font-bold'>Population:</span> {current.population}</p>
-                                <p><span className='font-bold'>Region:</span> {current.region}</p>
+                                {current.name.common && <p><span className='font-bold'>Native Name:</span> {current.name.common}</p>}
+                                {current.population && <p><span className='font-bold'>Population:</span> {current.population}</p>}
+                                {current.region && <p><span className='font-bold'>Region:</span> {current.region}</p>}
                                 <p><span className='font-bold'>Sub region:</span> {current.subregion}</p>
                                 <p><span className='font-bold'>Capital:</span> {current.capital}</p>
                                 <p><span className='font-bold'>Area:</span> {current.area}</p>

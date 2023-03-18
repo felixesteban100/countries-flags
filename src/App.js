@@ -14,7 +14,7 @@ function App() {
 
   const countryName  = useRef("")
 
-  const [itemOffset, setItemOffset] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const {isLoading, /* error, */ data: allCountries} = useQuery("getting all countries", async () => {
     return await axios.get('https://restcountries.com/v3.1/all')
@@ -157,13 +157,13 @@ function App() {
                 search={search}
                 countryName={countryName}
                 theme={theme}
-                setItemOffset={setItemOffset}
+                setCurrentPage={setCurrentPage}
               />
               {
                 !isLoading ?
                 <PaginatedItems 
-                  itemOffset={itemOffset}
-                  setItemOffset={setItemOffset}
+                  currentPage={currentPage}
+                  setCurrentPage={setCurrentPage}
                   itemsPerPage={6}
                   countries={countries}
                   selectCountry={selectCountry}
